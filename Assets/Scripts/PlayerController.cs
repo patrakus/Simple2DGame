@@ -10,8 +10,6 @@ public class PlayerController : PawnController
 
     #region PROPERTIES
 
-    public Camera MainCamera { get; set; }
-
     #endregion
 
     #region FUNCTIONS

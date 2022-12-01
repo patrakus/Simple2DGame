@@ -25,7 +25,6 @@ public class NPCController : PawnController
     public void StopMovement()
     {
         isAbleToMove = false;
-        Debug.Log("It Works!");
     }
 
     protected override void Start()
@@ -56,16 +55,15 @@ public class NPCController : PawnController
         {
             return;
         }
+        
+        float value = squareMinRunAwayDistance - distance;
 
-        float facingValue = Vector3.Dot(directionToNpc.normalized, PlayerTransform.forward);
-
-        if (facingValue <= 0)
+        if (value <= 0)
         {
             return;
         }
 
-        localTransform.position += directionToNpc.normalized * (speed * Time.deltaTime * facingValue);
-        localTransform.forward = directionToNpc.normalized;
+        localTransform.position += directionToNpc.normalized * (speed * Time.deltaTime * value);
     }
 
     #endregion
