@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -8,7 +7,9 @@ public class GameManager : MonoBehaviour
     #region MEMBERS
 
     [SerializeField]
-    private GameObject enemyPrefab;
+    private NPCController enemyPrefab;
+    [SerializeField]
+    private PlayerController playerTransform;
     [SerializeField]
     [Min(1)]
     private int enemiesCount = 1000;
@@ -40,7 +41,9 @@ public class GameManager : MonoBehaviour
         {
             Vector3 screenPosition = mainCamera.ScreenToWorldPoint(new Vector3(Random.Range(0,Screen.width), Random.Range(0,Screen.height), 0));
             screenPosition.z = 0;
-            Instantiate(enemyPrefab, screenPosition, Quaternion.identity);
+            NPCController enemy = Instantiate(enemyPrefab, screenPosition, Quaternion.identity);
+            enemy.PlayerTransform = playerTransform.transform;
+            enemy.MainCamera = mainCamera;
         }
     }
 

@@ -67,7 +67,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square - Player Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2638172191229893852, guid: 9074c43b3369bb1499ee13ebfb74570a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9074c43b3369bb1499ee13ebfb74570a, type: 3}
 --- !u!1 &4012978535026301150 stripped
 GameObject:
@@ -86,3 +87,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8d1bfa31ec47f46a88ecf17f2e8275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
